@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/github/license/Aether-254/Aether-Launcher)](LICENSE)
 [![GitHub Release](https://img.shields.io/github/v/release/Aether-254/Aether-Launcher?include_prereleases)](https://github.com/Aether-254/Aether-Launcher/releases)
 
-<img src="https://ld.xh.do/ld-badge.svg" alt="认可linux.do" width="200" height="28">
+<img src="https://ld.xh.do/ld-badge.svg" alt="认可linux.do">
 
 </div>
 
