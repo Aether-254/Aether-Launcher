@@ -4,10 +4,10 @@
 
 **透明、可靠、可迁移的 Minecraft Java 版实例管理器**
 
-[![CI](https://github.com/Aether-254/Aether-Launcher/actions/workflows/ci.yml/badge.svg)](https://github.com/Aether-254/Aether-Launcher/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/Aether-254/Aether-Launcher/actions/workflows/codeql.yml/badge.svg)](https://github.com/Aether-254/Aether-Launcher/actions/workflows/codeql.yml)
+[![CI](https://github.com/AetherLauncher-org/Aether-Launcher/actions/workflows/ci.yml/badge.svg)](https://github.com/AetherLauncher-org/Aether-Launcher/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/AetherLauncher-org/Aether-Launcher/actions/workflows/codeql.yml/badge.svg)](https://github.com/AetherLauncher-org/Aether-Launcher/actions/workflows/codeql.yml)
 [![License](https://img.shields.io/github/license/Aether-254/Aether-Launcher)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/Aether-254/Aether-Launcher?include_prereleases)](https://github.com/Aether-254/Aether-Launcher/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/Aether-254/Aether-Launcher?include_prereleases)](https://github.com/AetherLauncher-org/Aether-Launcher/releases)
 
 <img src="https://ld.xh.do/ld-badge.svg" alt="认可linux.do">
 
@@ -95,7 +95,7 @@ cargo test --workspace --exclude aether-desktop
 - [ ] 可审计的多来源下载计划与缓存
 - [ ] Fabric、Forge、NeoForge 与 Quilt 安装
 
-具体需求请使用 [Issues](https://github.com/Aether-254/Aether-Launcher/issues)，设计讨论和问答请前往 [Discussions](https://github.com/Aether-254/Aether-Launcher/discussions)。
+具体需求请使用 [Issues](https://github.com/AetherLauncher-org/Aether-Launcher/issues)，设计讨论和问答请前往 [Discussions](https://github.com/AetherLauncher-org/Aether-Launcher/discussions)。
 
 ## 贡献
 

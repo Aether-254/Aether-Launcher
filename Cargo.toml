@@ -16,7 +16,7 @@ members = [
 version = "0.1.0"
 edition = "2024"
 license = "Apache-2.0"
-repository = "https://github.com/Aether-254/Aether-Launcher"
+repository = "https://github.com/AetherLauncher-org/Aether-Launcher"
 rust-version = "1.85"
 
 [workspace.dependencies]

@@ -6,7 +6,7 @@ Aether Launcher 尚未发布稳定版本。目前只对 `main` 分支最新提�
 
 ## Reporting a vulnerability
 
-请使用 GitHub 的 [私密漏洞报告](https://github.com/Aether-254/Aether-Launcher/security/advisories/new)，不要创建公开 Issue、Discussion 或 PR。
+请使用 GitHub 的 [私密漏洞报告](https://github.com/AetherLauncher-org/Aether-Launcher/security/advisories/new)，不要创建公开 Issue、Discussion 或 PR。
 
 报告请尽量包含受影响提交或版本、前置条件、可复现步骤或最小 PoC、预期影响与已知缓解方式。
 
