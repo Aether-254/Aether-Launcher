@@ -10,6 +10,11 @@ updates:
         update-types:
           - minor
           - patch
+    ignore:
+      # typescript-eslint 8.72 currently requires TypeScript < 6.1.
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-major
     labels:
       - dependencies
       - "area: frontend"
