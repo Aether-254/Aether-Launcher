@@ -1,9 +1,9 @@
 # Support
 
-- 使用问题、方案讨论与问答：[GitHub Discussions](https://github.com/Aether-254/Aether-Launcher/discussions)
-- 可复现的软件缺陷：[Bug report](https://github.com/Aether-254/Aether-Launcher/issues/new?template=bug.yml)
-- 功能建议：[Feature request](https://github.com/Aether-254/Aether-Launcher/issues/new?template=feature.yml)
-- 安全漏洞：[Private vulnerability reporting](https://github.com/Aether-254/Aether-Launcher/security/advisories/new)
+- 使用问题、方案讨论与问答：[GitHub Discussions](https://github.com/AetherLauncher-org/Aether-Launcher/discussions)
+- 可复现的软件缺陷：[Bug report](https://github.com/AetherLauncher-org/Aether-Launcher/issues/new?template=bug.yml)
+- 功能建议：[Feature request](https://github.com/AetherLauncher-org/Aether-Launcher/issues/new?template=feature.yml)
+- 安全漏洞：[Private vulnerability reporting](https://github.com/AetherLauncher-org/Aether-Launcher/security/advisories/new)
 
 当前项目处于早期开发阶段，不提供稳定版 SLA，也没有官方群聊或商业支持渠道。
 
