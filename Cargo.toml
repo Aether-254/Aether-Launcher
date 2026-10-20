@@ -1,0 +1,34 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/aether-auth",
+  "crates/aether-core",
+  "crates/aether-download",
+  "crates/aether-launch",
+  "crates/aether-manifest",
+  "crates/aether-modloader",
+  "crates/aether-runtime",
+  "crates/aether-storage",
+  "src-tauri",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+repository = "https://github.com/Aether-254/Aether-Launcher"
+rust-version = "1.85"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tracing = "0.1"
+uuid = { version = "1", features = ["serde", "v4"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

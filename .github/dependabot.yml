@@ -1,0 +1,36 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      frontend-minor:
+        update-types:
+          - minor
+          - patch
+    labels:
+      - dependencies
+      - area: frontend
+  - package-ecosystem: cargo
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      rust-minor:
+        update-types:
+          - minor
+          - patch
+    labels:
+      - dependencies
+      - area: rust
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    labels:
+      - dependencies
+      - area: ci

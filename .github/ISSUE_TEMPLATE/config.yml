@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用问答
+    url: https://github.com/Aether-254/Aether-Launcher/discussions/categories/q-a
+    about: 安装、使用与开发环境问题请优先在 Discussions 提问
+  - name: 功能讨论
+    url: https://github.com/Aether-254/Aether-Launcher/discussions/categories/ideas
+    about: 较大的产品、交互与兼容性想法先在 Discussions 展开
+  - name: 私密安全报告
+    url: https://github.com/Aether-254/Aether-Launcher/security/advisories/new
+    about: 安全漏洞不要创建公开 Issue

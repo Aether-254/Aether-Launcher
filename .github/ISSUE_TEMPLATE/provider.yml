@@ -1,0 +1,45 @@
+name: Download/provider issue
+description: 报告版本元数据、下载来源、散列或网络诊断问题
+title: "[Provider]: "
+labels: ["area: download", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        不要提交受版权保护的游戏文件、访问令牌或带签名的私有下载地址。
+  - type: input
+    id: provider
+    attributes:
+      label: Provider
+      placeholder: Mojang metadata / Modrinth / 用户配置源
+    validations:
+      required: true
+  - type: input
+    id: artifact
+    attributes:
+      label: 目标资源
+      placeholder: 版本、库、资源对象或模组标识
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 诊断结果
+      description: HTTP 状态、响应类型、期望/实际散列、重试与回退情况
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 网络与平台环境
+      description: 操作系统、代理类型、DNS 环境；不要公开真实 IP 或凭据
+    validations:
+      required: true
+  - type: checkboxes
+    id: integrity
+    attributes:
+      label: 完整性确认
+      options:
+        - label: 我没有通过关闭证书或散列校验来“解决”问题
+          required: true

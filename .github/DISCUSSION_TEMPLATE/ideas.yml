@@ -1,0 +1,21 @@
+title: "[Idea] "
+labels: ["discussion", "enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 用户问题
+      description: 哪类用户在什么场景遇到什么阻碍
+    validations:
+      required: true
+  - type: textarea
+    id: direction
+    attributes:
+      label: 可能方向
+      description: 描述方案和取舍，不要求已有完整设计
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: 边界与风险

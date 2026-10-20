@@ -1,0 +1,15 @@
+"area: frontend":
+  - changed-files:
+      - any-glob-to-any-file: ["src/**", "public/**", "package*.json"]
+"area: rust":
+  - changed-files:
+      - any-glob-to-any-file: ["crates/**", "Cargo.toml", "Cargo.lock"]
+"area: desktop":
+  - changed-files:
+      - any-glob-to-any-file: ["src-tauri/**"]
+"area: ci":
+  - changed-files:
+      - any-glob-to-any-file: [".github/workflows/**", ".github/dependabot.yml"]
+"documentation":
+  - changed-files:
+      - any-glob-to-any-file: ["**/*.md", "docs/**"]

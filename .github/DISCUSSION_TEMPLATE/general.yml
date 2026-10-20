@@ -1,0 +1,18 @@
+title: "[General] "
+labels: ["discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: 欢迎讨论 Aether Launcher。请保持主题明确，并避免粘贴敏感日志。
+  - type: textarea
+    id: topic
+    attributes:
+      label: 主题
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: 背景与上下文
+    validations:
+      required: true

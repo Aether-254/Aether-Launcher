@@ -1,0 +1,56 @@
+name: Feature request
+description: 提议一个有明确使用场景的功能
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前检查
+      options:
+        - label: 我搜索过现有 Issues 和 Discussions
+          required: true
+        - label: 这不是安全漏洞或普通使用问题
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 描述用户场景与当前阻碍，不要只写想要的按钮
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+      description: 说明交互、数据流和失败状态
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 考虑过的替代方案
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 影响范围
+      multiple: true
+      options:
+        - UI / UX
+        - 实例管理
+        - 下载与校验
+        - Java 运行时
+        - 游戏启动
+        - 账户认证
+        - 模组与整合包
+        - 跨平台
+        - 开发者体验
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: 风险与兼容性
+      description: 数据迁移、安全、平台差异、服务依赖等
