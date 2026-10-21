@@ -16,12 +16,12 @@
 > [!IMPORTANT]
 > Aether Launcher 目前处于早期开发阶段。仓库已经包含可构建的桌面壳、领域模型和自动化，但尚未完成游戏下载、Microsoft 登录或游戏启动流程。请不要把当前版本当作可替代日常启动器的发行版。
 
-## 为什么做 Aether
+## 为什么做 Aether Launcher
 
-Minecraft 实例不应该被某一个启动器、下载源或服务入口锁住。Aether 将本地导入、来源透明、文件校验和故障可解释性作为基础能力：
+Minecraft 实例不应该被某一个启动器、下载源或服务入口锁住。Aether Launcher 将本地导入、来源透明、文件校验和故障可解释性作为基础能力：
 
 - **本地优先**：已有实例可以直接导入，只补齐缺失文件
-- **来源透明**：下载计划记录 provider、目标地址、大小与预期散列
+- **来源透明**：下载计划记录上游、目标地址、大小与预期散列
 - **校验优先**：任何来源都不能绕过完整性校验
 - **实例隔离**：版本、模组、Java 与启动参数互不污染
 - **跨平台**：以 Windows 为首发平台，共享 Rust 核心并支持 Linux 与 macOS
@@ -36,12 +36,12 @@ Rust workspace
 ├── Tauri 2                 桌面壳与受约束 IPC
 ├── aether-core             实例与版本领域模型
 ├── aether-manifest         Minecraft 版本元数据
-├── aether-download         下载计划、来源与校验
+├── aether-download         下载、来源与校验
 ├── aether-auth             账户模型与认证边界
 ├── aether-runtime          Java 运行时发现
 ├── aether-launch           启动计划与进程生命周期
 ├── aether-modloader        Fabric / Forge / NeoForge / Quilt
-└── aether-storage          本地持久化边界
+└── aether-storage          本地持久化
 
 React + TypeScript
 ├── Fluent UI React v9      Fluent 2 组件与设计 token
@@ -114,8 +114,9 @@ Aether Launcher 不接受项目赞助，也不会设置 GitHub Sponsors、爱发
 
 以上链接仅作为公益捐赠入口参考，不代表 Aether Launcher 与这些平台存在合作、隶属、授权或背书关系。捐赠前请自行核验项目主体、资金用途、所在地区的可用性以及平台条款。
 
-## 法律与品牌说明
+## 免责声明
 
+NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
 Aether Launcher 是独立的社区项目，与 Mojang Studios、Microsoft、Minecraft 或 Linux.DO 不存在官方隶属、授权或背书关系。“Minecraft”是其权利人的商标。本项目不随仓库分发 Minecraft 游戏文件、账户凭据或第三方受版权保护的内容。
 
 ## 许可证
