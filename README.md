@@ -6,8 +6,8 @@
 
 [![CI](https://github.com/AetherLauncher-org/Aether-Launcher/actions/workflows/ci.yml/badge.svg)](https://github.com/AetherLauncher-org/Aether-Launcher/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/AetherLauncher-org/Aether-Launcher/actions/workflows/codeql.yml/badge.svg)](https://github.com/AetherLauncher-org/Aether-Launcher/actions/workflows/codeql.yml)
-[![License](https://img.shields.io/github/license/Aether-254/Aether-Launcher)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/Aether-254/Aether-Launcher?include_prereleases)](https://github.com/AetherLauncher-org/Aether-Launcher/releases)
+[![License](https://img.shields.io/github/license/AetherLauncher-org/Aether-Launcher)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/AetherLauncher-org/Aether-Launcher?include_prereleases)](https://github.com/AetherLauncher-org/Aether-Launcher/releases)
 
 <img src="https://ld.xh.do/ld-badge.svg" alt="认可linux.do">
 
