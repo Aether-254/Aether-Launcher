@@ -97,6 +97,10 @@ cargo test --workspace --exclude aether-desktop
 
 具体需求请使用 [Issues](https://github.com/AetherLauncher-org/Aether-Launcher/issues)，设计讨论和问答请前往 [Discussions](https://github.com/AetherLauncher-org/Aether-Launcher/discussions)。
 
+## 文档
+
+- [架构概览](docs/architecture.md)：crate 分层、前端结构、IPC 边界，以及各模块还缺什么
+
 ## 贡献
 
 开始编码前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。安全问题不要提交公开 Issue，请按照 [SECURITY.md](SECURITY.md) 使用 GitHub 私密漏洞报告。

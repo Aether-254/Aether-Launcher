@@ -15,3 +15,11 @@ The project follows [Semantic Versioning](https://semver.org/) once public relea
 - Rust formatting, linting, and unit-test checks
 - Issue Forms, Discussion Forms, pull request template, and CODEOWNERS
 - Dependabot, CodeQL, dependency review, labeling, CI, and draft release workflows
+- Sidebar navigation between home, instances, library, accounts, and settings
+- Typed frontend IPC layer (`src/ipc`)
+- Architecture overview in `docs/architecture.md`
+
+### Changed
+
+- Home greeting follows the local time of day
+- Document language set to `zh-CN`
