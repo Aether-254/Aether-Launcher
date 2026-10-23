@@ -14,18 +14,17 @@
 </div>
 
 > [!IMPORTANT]
-> Aether Launcher 目前处于早期开发阶段。仓库已经包含可构建的桌面壳、领域模型和自动化，但尚未完成游戏下载、Microsoft 登录或游戏启动流程。请不要把当前版本当作可替代日常启动器的发行版。
+> Aether Launcher 目前处于早期开发阶段。请不要把当前版本当作可替代日常启动器的发行版。
 
 ## 为什么做 Aether Launcher
 
-Minecraft 实例不应该被某一个启动器、下载源或服务入口锁住。Aether Launcher 将本地导入、来源透明、文件校验和故障可解释性作为基础能力：
+因为不可抗力的原因，部分主流启动器不得不关闭或限制了下载功能。Minecraft 实例不应该被某一个启动器、下载源或服务入口锁死。
 
-- **本地优先**：已有实例可以直接导入，只补齐缺失文件
-- **来源透明**：下载计划记录上游、目标地址、大小与预期散列
-- **校验优先**：任何来源都不能绕过完整性校验
-- **实例隔离**：版本、模组、Java 与启动参数互不污染
-- **跨平台**：以 Windows 为首发平台，共享 Rust 核心并支持 Linux 与 macOS
-- **最小权限**：前端只能调用窄化的领域命令，不能传入任意系统命令
+Aether Launcher 的目标是提供一个**不依赖单一中心化服务**的替代方案：
+- **本地优先**：完美兼容并导入你现有的游戏实例，支持从 PCL2 / HMCL / BakaXL / Prism Launcher / Modrinth / ... 一键导入，只补齐缺失文件
+- **多源容错**：不绑定单一下载源，记录每个文件的来源与散列，随时可审计
+- **纯净开源**：不搞小动作，代码完全公开，数据完全保存在本地
+- **跨平台**：Rust 核心，首发 Windows，后续支持 macOS 与 Linux
 
 我们支持 Linux.DO 社区与开放、友善、重视技术质量的开发者社区。
 
@@ -33,18 +32,18 @@ Minecraft 实例不应该被某一个启动器、下载源或服务入口锁住�
 
 ```text
 Rust workspace
-├── Tauri 2                 桌面壳与受约束 IPC
-├── aether-core             实例与版本领域模型
+├── Tauri 2                 桌面
+├── aether-core             核心
 ├── aether-manifest         Minecraft 版本元数据
 ├── aether-download         下载、来源与校验
-├── aether-auth             账户模型与认证边界
-├── aether-runtime          Java 运行时发现
-├── aether-launch           启动计划与进程生命周期
-├── aether-modloader        Fabric / Forge / NeoForge / Quilt
-└── aether-storage          本地持久化
+├── aether-auth             账户与认证
+├── aether-runtime          Java 管理
+├── aether-launch           游戏启动
+├── aether-modloader        Mod Loaders
+└── aether-storage          本地数据存储
 
 React + TypeScript
-├── Fluent UI React v9      Fluent 2 组件与设计 token
+├── Fluent UI React v9      Fluent 2 组件与设计语言
 ├── Vite                    前端构建
 └── Vitest                  前端测试
 ```
@@ -76,26 +75,17 @@ cargo clippy --workspace --all-targets -- -D warnings
 cargo test --workspace
 ```
 
-仅检查不依赖桌面 WebView 的 Rust 核心：
+仅检查 Rust 核心：
 
 ```powershell
 cargo test --workspace --exclude aether-desktop
 ```
 
 ## 当前里程碑
+见 Milestone。
 
-- [x] Rust workspace 与 Tauri 2 桌面壳
-- [x] React、TypeScript 与 Fluent UI v9 基础界面
-- [x] 实例、清单、下载、账户、Java 与启动计划的基础类型
-- [x] CI、安全扫描、依赖更新与跨平台 Release 工作流
-- [ ] 扫描并导入本地 Minecraft 实例
-- [ ] 解析版本继承与生成 classpath
-- [ ] Java 发现、兼容性选择与启动日志
-- [ ] Microsoft / Xbox / Minecraft 正版认证
-- [ ] 可审计的多来源下载计划与缓存
-- [ ] Fabric、Forge、NeoForge 与 Quilt 安装
-
-具体需求请使用 [Issues](https://github.com/AetherLauncher-org/Aether-Launcher/issues)，设计讨论和问答请前往 [Discussions](https://github.com/AetherLauncher-org/Aether-Launcher/discussions)。
+具体需求见 [Issues](https://github.com/AetherLauncher-org/Aether-Launcher/issues)，设计讨论和问答见 [Discussions](https://github.com/AetherLauncher-org/Aether-Launcher/discussions)。
+提交前请确保没有重复 Issue 或话题。
 
 ## 文档
 
@@ -103,11 +93,11 @@ cargo test --workspace --exclude aether-desktop
 
 ## 贡献
 
-开始编码前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。安全问题不要提交公开 Issue，请按照 [SECURITY.md](SECURITY.md) 使用 GitHub 私密漏洞报告。
+开始编码前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。安全问题请按照 [SECURITY.md](SECURITY.md) 报告。
 
 ## 不接受赞助
 
-Aether Launcher 不接受项目赞助，也不会设置 GitHub Sponsors、爱发电或其他项目收款入口。如果你原本打算赞助本项目，可以考虑把这份心意交给真正需要帮助的人：
+Aether Launcher 不接受项目赞助。如果你原本打算赞助本项目，可以考虑把这份心意交给真正需要帮助的人：
 
 - [腾讯公益](https://gongyi.qq.com/succor/project_list.htm)
 - [支付宝公益](https://love.alipay.com/donate/index.htm)
@@ -116,12 +106,12 @@ Aether Launcher 不接受项目赞助，也不会设置 GitHub Sponsors、爱发
 - [GoFundMe](https://www.gofundme.com/)
 - [DonorsChoose](https://www.donorschoose.org/)
 
-以上链接仅作为公益捐赠入口参考，不代表 Aether Launcher 与这些平台存在合作、隶属、授权或背书关系。捐赠前请自行核验项目主体、资金用途、所在地区的可用性以及平台条款。
+以上链接仅作为公益捐赠入口参考，不代表 Aether Launcher 与这些平台存在合作、隶属、授权或背书关系。
 
 ## 免责声明
 
 NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
-Aether Launcher 是独立的社区项目，与 Mojang Studios、Microsoft、Minecraft 或 Linux.DO 不存在官方隶属、授权或背书关系。“Minecraft”是其权利人的商标。本项目不随仓库分发 Minecraft 游戏文件、账户凭据或第三方受版权保护的内容。
+Aether Launcher 是独立的社区项目，与 Mojang Studios、Microsoft、Minecraft 或 Linux.DO 不存在官方隶属、授权或背书关系。“Minecraft”是其权利人的商标。
 
 ## 许可证
 
