@@ -26,7 +26,6 @@ describe("Aether Launcher shell", () => {
     ["实例", "实例列表尚未实现"],
     ["资源库", "资源库尚未实现"],
     ["账户", "账户管理尚未实现"],
-    ["设置", "设置尚未实现"],
   ])("switches to the %s page from the sidebar", (label, pendingTitle) => {
     render(<App />);
 
@@ -35,7 +34,9 @@ describe("Aether Launcher shell", () => {
     expect(
       screen.getByRole("heading", { level: 1, name: label }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: pendingTitle })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: pendingTitle }),
+    ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: label })).toHaveAttribute(
       "aria-current",
       "page",
@@ -71,5 +72,45 @@ describe("home greeting", () => {
     expect(
       screen.getByRole("heading", { level: 1, name: "早上好" }),
     ).toBeInTheDocument();
+  });
+});
+
+describe("settings", () => {
+  it("shows the appearance options with dark selected by default", () => {
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button", { name: "设置" }));
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: "设置" }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("radio", { name: "深色" })).toBeChecked();
+    expect(screen.getByRole("radio", { name: "浅色" })).not.toBeChecked();
+    expect(
+      screen.getByRole("heading", { name: "Java 与下载来源设置尚未实现" }),
+    ).toBeInTheDocument();
+  });
+
+  it("switches the colour scheme and remembers the choice", () => {
+    const { container } = render(<App />);
+    const shell = container.querySelector(".app-shell");
+    expect(shell).toHaveAttribute("data-theme", "dark");
+
+    fireEvent.click(screen.getByRole("button", { name: "设置" }));
+    fireEvent.click(screen.getByRole("radio", { name: "浅色" }));
+
+    expect(shell).toHaveAttribute("data-theme", "light");
+    expect(window.localStorage.getItem("aether.theme")).toBe("light");
+  });
+
+  it("restores a saved colour scheme on startup", () => {
+    window.localStorage.setItem("aether.theme", "light");
+
+    const { container } = render(<App />);
+
+    expect(container.querySelector(".app-shell")).toHaveAttribute(
+      "data-theme",
+      "light",
+    );
   });
 });

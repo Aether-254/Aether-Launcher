@@ -59,9 +59,9 @@ export const settingsPage: PageDefinition = {
   id: "settings",
   label: "设置",
   icon: <Settings24Regular />,
-  summary: "Java 运行时、内存与下载来源",
-  pendingTitle: "设置尚未实现",
-  pendingBody: "这里将提供 Java 运行时选择、内存上限和下载来源的配置。",
+  summary: "外观、Java 运行时、内存与下载来源",
+  pendingTitle: "Java 与下载来源设置尚未实现",
+  pendingBody: "Java 运行时选择、内存上限和下载来源的配置还在开发。",
 };
 
 export const allPages: readonly PageDefinition[] = [...mainPages, settingsPage];

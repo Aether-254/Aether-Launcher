@@ -44,13 +44,15 @@ src/
 ├── main.tsx          入口
 ├── App.tsx           外壳：主题、侧边栏、页面切换
 ├── navigation.tsx    页面清单（id、名称、图标、说明）
-├── components/       Sidebar、PageHeader
-├── pages/            HomePage；功能未做的页面共用 PlaceholderPage
+├── components/       Sidebar、PageHeader、PendingPanel（「尚未实现」提示）
+├── pages/            HomePage、SettingsPage；功能未做的页面共用 PlaceholderPage
 ├── ipc/              对后端命令的类型化封装
-└── lib/              纯函数（问候语等）
+└── lib/              纯函数与小 hook（问候语、配色方案）
 ```
 
 没有路由库，页面切换就是 `App` 里的一个 state。
+
+配色方案有深色、浅色、跟随系统三种，默认深色。选择保存在 `localStorage` 的 `aether.theme`。`App` 把解析后的结果同时交给 Fluent 的 `FluentProvider`（组件配色）和 `.app-shell` 的 `data-theme`（`App.css` 里的颜色变量）。新增样式时颜色走 `App.css` 顶部的变量，不要写死色值。
 
 ## IPC 边界
 

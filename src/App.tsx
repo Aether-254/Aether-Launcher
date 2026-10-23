@@ -1,4 +1,8 @@
-import { FluentProvider, webDarkTheme } from "@fluentui/react-components";
+import {
+  FluentProvider,
+  webDarkTheme,
+  webLightTheme,
+} from "@fluentui/react-components";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Sidebar } from "./components/Sidebar";
@@ -9,16 +13,19 @@ import {
 } from "./ipc";
 import type { ApplicationInfo } from "./ipc";
 import { currentGreeting } from "./lib/greeting";
+import { useTheme } from "./lib/useTheme";
 import { allPages } from "./navigation";
 import type { PageId } from "./navigation";
 import { HomePage } from "./pages/HomePage";
 import { PlaceholderPage } from "./pages/PlaceholderPage";
+import { SettingsPage } from "./pages/SettingsPage";
 
 function App() {
   const [application, setApplication] =
     useState<ApplicationInfo>(defaultApplicationInfo);
   const [pageId, setPageId] = useState<PageId>("home");
   const [greeting] = useState(currentGreeting);
+  const { preference, resolved, setPreference } = useTheme();
 
   useEffect(() => {
     if (!isTauri()) {
@@ -42,8 +49,8 @@ function App() {
   const page = allPages.find((candidate) => candidate.id === pageId) ?? allPages[0];
 
   return (
-    <FluentProvider theme={webDarkTheme}>
-      <div className="app-shell">
+    <FluentProvider theme={resolved === "dark" ? webDarkTheme : webLightTheme}>
+      <div className="app-shell" data-theme={resolved}>
         <Sidebar
           application={application}
           current={pageId}
@@ -55,6 +62,12 @@ function App() {
               application={application}
               greeting={greeting}
               summary={page.summary}
+            />
+          ) : page.id === "settings" ? (
+            <SettingsPage
+              page={page}
+              themePreference={preference}
+              onThemeChange={setPreference}
             />
           ) : (
             <PlaceholderPage page={page} />

@@ -18,6 +18,7 @@ The project follows [Semantic Versioning](https://semver.org/) once public relea
 - Sidebar navigation between home, instances, library, accounts, and settings
 - Typed frontend IPC layer (`src/ipc`)
 - Architecture overview in `docs/architecture.md`
+- Appearance setting with dark, light, and follow-system colour schemes
 
 ### Changed
 
