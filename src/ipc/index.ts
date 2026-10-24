@@ -70,3 +70,11 @@ export type { JavaRuntimeInfo } from "./java";
 // 微软账户登录
 export { describeLoginStatus, startMicrosoftLogin } from "./accounts";
 export type { MicrosoftLoginStatus } from "./accounts";
+
+// Installed game lifecycle (offline only; no arbitrary executable or paths)
+export {
+  activateInstalledInstance,
+  startInstalledInstance,
+  stopInstalledInstance,
+} from "./launch";
+export type { GameRunStatus } from "./launch";
