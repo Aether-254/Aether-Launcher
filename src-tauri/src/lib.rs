@@ -1,4 +1,7 @@
+mod commands;
+
 use serde::Serialize;
+use tauri::ipc::Invoke;
 
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -20,7 +23,21 @@ fn application_info() -> ApplicationInfo {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![application_info])
+        .invoke_handler(command_handlers())
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+}
+
+/// Compose the command handlers contributed by the narrow command modules.
+///
+/// `src-tauri/src/lib.rs` is intentionally kept small so that parallel feature
+/// branches only conflict on the `generate_handler!` list. Instances are the
+/// first module; as more trusted backends are exposed, their handlers are
+/// chained here.
+fn command_handlers() -> impl Fn(Invoke) -> bool + Send + Sync + 'static {
+    tauri::generate_handler![
+        application_info,
+        commands::instances::list_instances,
+        commands::instances::create_instance,
+    ]
 }
