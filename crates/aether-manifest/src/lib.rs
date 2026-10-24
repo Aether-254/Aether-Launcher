@@ -1,4 +1,5 @@
 pub mod arguments;
+mod inherit;
 pub mod rules;
 
 use aether_core::VersionId;
@@ -71,7 +72,7 @@ impl Library {
     }
 }
 
-/// 版本清单。目前不处理旧版的 `natives` / `classifiers`，也不合并 `inheritsFrom`。
+/// 版本清单。继承合并见 [`VersionManifest::merge_with_parent`]；目前不处理旧版的 `natives` / `classifiers`。
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct VersionManifest {

@@ -20,6 +20,7 @@ The project follows [Semantic Versioning](https://semver.org/) once public relea
 - Architecture overview in `docs/architecture.md`
 - Appearance setting with dark, light, and follow-system colour schemes
 - Version manifest parsing for libraries, arguments, asset index, client download and Java version, with rule evaluation
+- `inheritsFrom` merging: child libraries first, newest version wins among identical coordinates, parent arguments first
 
 ### Changed
 
