@@ -1,3 +1,4 @@
+pub mod assets;
 pub mod native_install;
 pub mod native_zip;
 pub mod verify;
