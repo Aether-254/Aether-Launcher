@@ -1,3 +1,5 @@
+pub mod native_zip;
+
 use std::collections::HashSet;
 use std::path::{Path, PathBuf};
 
