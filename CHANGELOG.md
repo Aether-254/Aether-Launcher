@@ -19,8 +19,10 @@ The project follows [Semantic Versioning](https://semver.org/) once public relea
 - Typed frontend IPC layer (`src/ipc`)
 - Architecture overview in `docs/architecture.md`
 - Appearance setting with dark, light, and follow-system colour schemes
+- Version manifest parsing for libraries, arguments, asset index, client download and Java version, with rule evaluation
 
 ### Changed
 
 - Home greeting follows the local time of day
 - Document language set to `zh-CN`
+- Download plans reject unsafe or duplicate destination paths
