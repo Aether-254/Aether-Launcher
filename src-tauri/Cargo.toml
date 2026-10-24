@@ -26,3 +26,6 @@ aether-core = { path = "../crates/aether-core" }
 aether-runtime = { path = "../crates/aether-runtime" }
 serde.workspace = true
 tracing.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
