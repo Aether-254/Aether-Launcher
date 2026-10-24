@@ -72,7 +72,8 @@ fn destination_key(path: &Path) -> String {
 
 /// 与平台无关的检查：同时把 `/` 和 `\` 当作分隔符，
 /// 这样在 Linux 上通过的路径换到 Windows 上也不会越出目录。
-fn is_safe_relative_path(path: &Path) -> bool {
+/// 启动计划使用相同规则检查库的本地相对路径。
+pub fn is_safe_relative_path(path: &Path) -> bool {
     let Some(text) = path.to_str() else {
         return false;
     };
