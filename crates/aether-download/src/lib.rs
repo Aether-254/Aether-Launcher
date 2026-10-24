@@ -65,7 +65,9 @@ fn is_sha1(value: &str) -> bool {
 
 /// Windows 上路径不区分大小写，`/` 和 `\` 等价，比较重复目标时统一处理。
 fn destination_key(path: &Path) -> String {
-    path.to_string_lossy().replace('\\', "/").to_ascii_lowercase()
+    path.to_string_lossy()
+        .replace('\\', "/")
+        .to_ascii_lowercase()
 }
 
 /// 与平台无关的检查：同时把 `/` 和 `\` 当作分隔符，
