@@ -1,4 +1,6 @@
 pub mod native_zip;
+pub mod native_install;
+pub mod verify;
 
 use std::collections::HashSet;
 use std::path::{Path, PathBuf};
