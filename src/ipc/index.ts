@@ -10,8 +10,17 @@ export type ApplicationInfo = {
   coreStatus: string;
 };
 
+/** A Java installation detected on the local machine. */
+export type JavaRuntimeInfo = {
+  executable: string;
+  majorVersion: number;
+  architecture: string;
+  vendor: string | null;
+};
+
 type CommandResults = {
   application_info: ApplicationInfo;
+  list_java_runtimes: JavaRuntimeInfo[];
 };
 
 export const defaultApplicationInfo: ApplicationInfo = {
@@ -33,4 +42,9 @@ function call<Name extends keyof CommandResults>(
 
 export function getApplicationInfo(): Promise<ApplicationInfo> {
   return call("application_info");
+}
+
+/** Discover local Java installations without blocking the desktop window. */
+export function listJavaRuntimes(): Promise<JavaRuntimeInfo[]> {
+  return call("list_java_runtimes");
 }
