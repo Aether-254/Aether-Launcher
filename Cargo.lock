@@ -68,7 +68,11 @@ dependencies = [
 name = "aether-modloader"
 version = "0.1.0"
 dependencies = [
+ "aether-core",
+ "regex",
  "serde",
+ "serde_json",
+ "thiserror 2.0.21",
 ]
 
 [[package]]
