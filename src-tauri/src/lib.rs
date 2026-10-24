@@ -55,11 +55,15 @@ async fn list_java_runtimes() -> Result<Vec<JavaRuntimeInfo>, String> {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .manage(commands::launch::LaunchState::default())
         .invoke_handler(tauri::generate_handler![
             application_info,
             list_java_runtimes,
             commands::instances::list_instances,
             commands::instances::create_instance,
+            commands::launch::activate_installed_instance,
+            commands::launch::start_installed_instance,
+            commands::launch::stop_installed_instance,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
