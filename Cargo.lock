@@ -30,6 +30,7 @@ name = "aether-desktop"
 version = "0.1.0"
 dependencies = [
  "aether-core",
+ "aether-runtime",
  "serde",
  "tauri",
  "tauri-build",
@@ -76,6 +77,7 @@ name = "aether-runtime"
 version = "0.1.0"
 dependencies = [
  "serde",
+ "thiserror 2.0.21",
 ]
 
 [[package]]
