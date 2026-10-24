@@ -32,6 +32,7 @@ dependencies = [
  "aether-core",
  "aether-runtime",
  "serde",
+ "serde_json",
  "tauri",
  "tauri-build",
  "tracing",
