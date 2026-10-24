@@ -1,5 +1,5 @@
-pub mod native_zip;
 pub mod native_install;
+pub mod native_zip;
 pub mod verify;
 
 use std::collections::HashSet;
